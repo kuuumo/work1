@@ -1,5 +1,5 @@
 class User < ApplicationRecord
-  before_save { self.email = email.downcase}
+  before_save { self.email = email.downcase }
 
   validates :name, presence: true, length: { maximum: 50 }
 
@@ -26,7 +26,9 @@ class User < ApplicationRecord
 
   validates :employee_num, presence: true
 
-  validates :company_post_code, presence: true
+  VALID_POST_CODE_REGEX = /\A\d{3}\-?\d{4}\z/
+  validates :company_post_code, presence: true,
+            format: { with: VALID_POST_CODE_REGEX }
 
   validates :company_location, presence: true
 

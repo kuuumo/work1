@@ -6,7 +6,7 @@ class UserTest < ActiveSupport::TestCase
     @user = User.new(name: "Example User", email: "user@example.com", phonetic: "イグザンプル　ユーザー",
                      tel: "09022345567", company: "Stark Industry",
                      department: "marketing", position: "ceo", employee_num: "6000",
-                     company_post_code: "350-1145", company_location: "埼玉県川越市",
+                     company_post_code: "3501145", company_location: "埼玉県川越市",
                      establishment_year: "1999", industry_type: "IT", ceo_name: "Tony Stark")
   end
 

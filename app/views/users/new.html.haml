@@ -1,0 +1,47 @@
+-provide(:title, "Sign in")
+
+%h1 User Register
+%p please fill in form for.
+.form_user
+  = form_for @user do |f|
+    %br
+      = f.label :name
+      = f.text_field :name
+    %br
+      = f.label :phonetic
+      = f.text_field :phonetic
+    %br
+      = f.label :email
+      = f.text_field :email
+    %br
+      = f.label :tel
+      = f.phone_field :tel
+    %br
+      = f.label :company
+      = f.text_field :company
+    %br
+      = f.label :department
+      = f.text_field :department
+    %br
+      = f.label :position
+      = f.text_field :position
+    %br
+      = f.label :employee_num
+      = f.number_field :employee_num
+    %br
+      = f.label :company_post_code
+      = f.number_field :company_post_code
+    %br
+      = f.label :company_location
+      = f.text_field :company_location
+    %br
+      = f.label :establishment_year
+      = f.date_field :establishment_year
+    %br
+      = f.label :industry_type
+      = f.text_field :industry_type
+    %br
+      = f.label :ceo_name
+      = f.text_field :ceo_name
+    %br
+      = f.submit "確認"
