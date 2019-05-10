@@ -1,5 +1,7 @@
 class UsersController < ApplicationController
   def show
+    @user = User.find(params[:id])
+    render action: :show2
   end
 
   def new
@@ -8,6 +10,12 @@ class UsersController < ApplicationController
 
   def create
     @user = User.new(user_params)
+    if @user.save!
+      log_in @user
+      redirect_to @user
+    else
+      render 'new'
+    end
   end
 
 
@@ -16,7 +24,8 @@ class UsersController < ApplicationController
       params.require(:user).permit(:name, :phonetic, :email, :tel, :company,
                                    :department, :position, :employee_num,
                                    :company_post_code, :company_location,
-                                   :establishment_year, :industry_type, :ceo_name)
+                                   :establishment_year, :industry_type, :ceo_name,
+                                   :password, :password_confirmation)
     end
 
 end
