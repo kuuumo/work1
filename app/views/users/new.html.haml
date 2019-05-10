@@ -4,44 +4,66 @@
 %p please fill in form for.
 .form_user
   = form_for @user do |f|
-    %br
+    -#= render 'shared/error_messages'
+    .mt10
       = f.label :name
       = f.text_field :name
-    %br
+
+    .mt10
       = f.label :phonetic
       = f.text_field :phonetic
-    %br
+      
+    .mt10
       = f.label :email
       = f.text_field :email
-    %br
+
+    .mt10
       = f.label :tel
       = f.phone_field :tel
-    %br
+
+    .mt10
       = f.label :company
       = f.text_field :company
-    %br
+
+    .mt10
       = f.label :department
       = f.text_field :department
-    %br
+
+    .mt10
       = f.label :position
       = f.text_field :position
-    %br
+
+    .mt10
       = f.label :employee_num
       = f.number_field :employee_num
-    %br
+
+    .mt10
       = f.label :company_post_code
       = f.number_field :company_post_code
-    %br
+
+    .mt10
       = f.label :company_location
       = f.text_field :company_location
-    %br
+
+    .mt10
       = f.label :establishment_year
       = f.date_field :establishment_year
-    %br
+
+    .mt10
       = f.label :industry_type
       = f.text_field :industry_type
-    %br
+
+    .mt10
       = f.label :ceo_name
       = f.text_field :ceo_name
-    %br
+
+    .mt10
+      = f.label :password
+      = f.password_field :password
+
+    .mt10
+      = f.label :password_confirmation
+      = f.password_field :password_confirmation
+
+    .mt10
       = f.submit "確認"

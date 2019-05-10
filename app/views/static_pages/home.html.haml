@@ -1,8 +1,11 @@
 -provide(:title, "Home")
 
 %h1 Home
-%p not yet user?
-= link_to "Sign up!", new_user_path
-%br
-  %p you have account?
-  = link_to "Log in", '#'
+-if logged_in?
+  = link_to "Log out", session_path
+-else
+  %p not yet user?
+  = link_to "Sign up!", new_user_path
+  .mt10
+    %p you have account?
+    = link_to "Log in", new_session_path
