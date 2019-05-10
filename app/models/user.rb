@@ -32,13 +32,14 @@ class User < ApplicationRecord
 
   validates :company_location, presence: true
 
-  validates :establishment_year, presence: true,
-            numericality: { only_integer: true}
+  validates :establishment_year, presence: true
 
   validates :industry_type, presence: true
 
   validates :ceo_name, presence: true
 
+  has_secure_password
+  validates :password, presence: true, length: { minimum: 6 }
 
 end
 

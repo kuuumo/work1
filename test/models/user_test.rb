@@ -7,7 +7,8 @@ class UserTest < ActiveSupport::TestCase
                      tel: "09022345567", company: "Stark Industry",
                      department: "marketing", position: "ceo", employee_num: "6000",
                      company_post_code: "3501145", company_location: "埼玉県川越市",
-                     establishment_year: "1999", industry_type: "IT", ceo_name: "Tony Stark")
+                     establishment_year: "1999", industry_type: "IT", ceo_name: "Tony Stark",
+                     password: "avengers", password_confirmation: "avengers")
   end
 
   test "should be valid" do
@@ -133,6 +134,16 @@ class UserTest < ActiveSupport::TestCase
 
   test "ceo name should be present" do
     @user.ceo_name = " "
+    assert_not @user.valid?
+  end
+
+  test " password should be present" do
+    @user.password = @user.password_confirmation = " " * 6
+    assert_not @user.valid?
+  end
+
+  test "password should have a minimum length" do
+    @user.password = @user.password_confirmation = "a" * 5
     assert_not @user.valid?
   end
 
