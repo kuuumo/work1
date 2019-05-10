@@ -1,0 +1,69 @@
+-provide(:title, "Sign in")
+
+%h1 User Register
+%p please fill in form for.
+.form_user
+  = form_for @user do |f|
+    -#= render 'shared/error_messages'
+    .mt10
+      = f.label :name
+      = f.text_field :name
+
+    .mt10
+      = f.label :phonetic
+      = f.text_field :phonetic
+      
+    .mt10
+      = f.label :email
+      = f.text_field :email
+
+    .mt10
+      = f.label :tel
+      = f.phone_field :tel
+
+    .mt10
+      = f.label :company
+      = f.text_field :company
+
+    .mt10
+      = f.label :department
+      = f.text_field :department
+
+    .mt10
+      = f.label :position
+      = f.text_field :position
+
+    .mt10
+      = f.label :employee_num
+      = f.number_field :employee_num
+
+    .mt10
+      = f.label :company_post_code
+      = f.number_field :company_post_code
+
+    .mt10
+      = f.label :company_location
+      = f.text_field :company_location
+
+    .mt10
+      = f.label :establishment_year
+      = f.date_field :establishment_year
+
+    .mt10
+      = f.label :industry_type
+      = f.text_field :industry_type
+
+    .mt10
+      = f.label :ceo_name
+      = f.text_field :ceo_name
+
+    .mt10
+      = f.label :password
+      = f.password_field :password
+
+    .mt10
+      = f.label :password_confirmation
+      = f.password_field :password_confirmation
+
+    .mt10
+      = f.submit "確認"
