@@ -1,4 +1,4 @@
--provide(:title, "Sign in")
+-provide(:title, "Sign in -user-")
 
 %h1 User Register
 %p please fill in form for.
@@ -22,42 +22,6 @@
       = f.phone_field :tel
 
     .mt10
-      = f.label :company
-      = f.text_field :company
-
-    .mt10
-      = f.label :department
-      = f.text_field :department
-
-    .mt10
-      = f.label :position
-      = f.text_field :position
-
-    .mt10
-      = f.label :employee_num
-      = f.number_field :employee_num
-
-    .mt10
-      = f.label :company_post_code
-      = f.number_field :company_post_code
-
-    .mt10
-      = f.label :company_location
-      = f.text_field :company_location
-
-    .mt10
-      = f.label :establishment_year
-      = f.date_field :establishment_year
-
-    .mt10
-      = f.label :industry_type
-      = f.text_field :industry_type
-
-    .mt10
-      = f.label :ceo_name
-      = f.text_field :ceo_name
-
-    .mt10
       = f.label :password
       = f.password_field :password
 
@@ -66,4 +30,5 @@
       = f.password_field :password_confirmation
 
     .mt10
-      = f.submit "確認"
+      = f.submit "次へ-会社情報-"
+
