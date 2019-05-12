@@ -1,0 +1,37 @@
+-provide(:title, "confirm")
+
+%h1 確認画面
+%p.user
+    .mt10
+    = @user["name"]
+    .mt10
+    = @user["phonetic"]
+    .mt10
+    = @user["email"]
+    .mt10
+    = @user["tel"]
+    .mt10
+    passwordはセキュリティ上表示しません。
+%p.company
+    .mt10
+    = @company["company"]
+    .mt10
+    = @company["department"]
+    .mt10
+    = @company["position"]
+    .mt10
+    = @company["employee_num"]
+    .mt10
+    = @company["company_post_code"]
+    .mt10
+    = @company["company_location"]
+    .mt10
+    = @company["establishment_year"]
+    .mt10
+    = @company["industry_type"]
+    .mt10
+    = @company["ceo_name"]
+
+= link_to "送信",finish_confirm_path
+
+
