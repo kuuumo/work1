@@ -2,7 +2,7 @@
 
 %h1 Home
 -if logged_in?
-  = link_to "Log out", session_path
+  = link_to "Log out", session_path, method: :delete
 -else
   %p not yet user?
   = link_to "Sign up!", new_user_path

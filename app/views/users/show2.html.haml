@@ -2,4 +2,8 @@
 
 %h1= @user.name
 
-%p= @user.email
+%p.user_info
+  = @user.email
+
+%p.company_info
+  = @user.company.company

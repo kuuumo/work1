@@ -11,12 +11,21 @@ module SessionsHelper
   end
 
   def logged_in?
-    !current_user.nil?
+    current_user.present?
   end
 
   def log_out
     session.delete(:user_id)
     @current_user = nil
+  end
+
+  def save_tmp(key, info)
+    session[:user_info] = {} if session[:user_info].blank?
+    session[:user_info][key.to_sym] = info
+  end
+
+  def delete_temp
+    session.delete(:user_info)
   end
 
 end

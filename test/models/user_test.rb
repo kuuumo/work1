@@ -4,11 +4,7 @@ class UserTest < ActiveSupport::TestCase
 
   def setup
     @user = User.new(name: "Example User", email: "user@example.com", phonetic: "イグザンプル　ユーザー",
-                     tel: "09022345567", company: "Stark Industry",
-                     department: "marketing", position: "ceo", employee_num: "6000",
-                     company_post_code: "3501145", company_location: "埼玉県川越市",
-                     establishment_year: "1999", industry_type: "IT", ceo_name: "Tony Stark",
-                     password: "avengers", password_confirmation: "avengers")
+                     tel: "09022345567", password: "avengers", password_confirmation: "avengers")
   end
 
   test "should be valid" do
@@ -84,56 +80,6 @@ class UserTest < ActiveSupport::TestCase
 
   test "telephone number should be present" do
     @user.tel = " "
-    assert_not @user.valid?
-  end
-
-  test "company should be present" do
-    @user.company = " "
-    assert_not @user.valid?
-  end
-
-  test "department should be present" do
-    @user.department = " "
-    assert_not @user.valid?
-  end
-
-  test "position should be present" do
-    @user.position = " "
-    assert_not @user.valid?
-  end
-
-  test "employee_num should be present" do
-    @user.employee_num = " "
-    assert_not @user.valid?
-  end
-
-  test "company post code should be present" do
-    @user.employee_num = " "
-    assert_not @user.valid?
-  end
-
-  test "company location post code should be present" do
-    @user.company_location = " "
-    assert_not @user.valid?
-  end
-
-  test "establishment year should be present" do
-    @user.establishment_year = " "
-    assert_not @user.valid?
-  end
-
-  test "establishment year should be integer" do
-    @user.establishment_year = "235234.3"
-    assert_not @user.valid?
-  end
-
-  test "industry type should be present" do
-    @user.industry_type = " "
-    assert_not @user.valid?
-  end
-
-  test "ceo name should be present" do
-    @user.ceo_name = " "
     assert_not @user.valid?
   end
 
