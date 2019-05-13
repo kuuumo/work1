@@ -1,12 +1,20 @@
 require 'test_helper'
-
+require 'pry'
 class CompanyTest < ActiveSupport::TestCase
 
   def setup
+    @user = User.new(name: "Example User", email: "user@example.com", phonetic: "イグザンプル　ユーザー",
+                     tel: "09022345567", password: "avengers", password_confirmation: "avengers")
+    @user.save
     @company = Company.new(company: "Stark Industry",
                      department: "marketing", position: "ceo", employee_num: "6000",
                      company_post_code: "3501145", company_location: "埼玉県川越市",
-                     establishment_year: "1999", industry_type: "IT", ceo_name: "Tony Stark")
+                     establishment_year: "1999", industry_type: "IT", ceo_name: "Tony Stark",
+                         user_id: @user.id)
+  end
+
+  test "company should be valid" do
+    assert @company.valid?
   end
 
   test "company should be present" do
@@ -44,11 +52,6 @@ class CompanyTest < ActiveSupport::TestCase
     assert_not @company.valid?
   end
 
-  test "establishment year should be integer" do
-    @company.establishment_year = "235234.3"
-    assert_not @company.valid?
-  end
-
   test "industry type should be present" do
     @company.industry_type = " "
     assert_not @company.valid?
@@ -57,6 +60,13 @@ class CompanyTest < ActiveSupport::TestCase
   test "ceo name should be present" do
     @company.ceo_name = " "
     assert_not @company.valid?
+  end
+
+  test "valid_without_user should do right" do
+    @company.user_id = " "
+    @company.valid?
+    binding.pry
+    assert @company.errors.count <= 1 && @company.errors[:user].present?
   end
 
 end

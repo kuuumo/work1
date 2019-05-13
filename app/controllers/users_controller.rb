@@ -25,8 +25,7 @@ class UsersController < ApplicationController
   end
 
   def finish_confirm
-    @user = User.new(session[:user_info]["user"])
-    @user.save
+    @user = User.create(session[:user_info]["user"])
     @company = Company.new(session[:user_info]["company"])
     @company.user_id = @user.id
     @company.save

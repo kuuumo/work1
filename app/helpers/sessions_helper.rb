@@ -20,15 +20,12 @@ module SessionsHelper
   end
 
   def save_tmp(key, info)
-    if session[:user_info].blank?
-      session[:user_info] = {}
-    end
+    session[:user_info] = {} if session[:user_info].blank?
     session[:user_info][key.to_sym] = info
   end
 
   def delete_temp
     session.delete(:user_info)
   end
-
 
 end

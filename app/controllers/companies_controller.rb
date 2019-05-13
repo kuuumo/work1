@@ -8,7 +8,7 @@ class CompaniesController < ApplicationController
     @company = Company.new(company_params)
     if @company.valid_without_user?
       save_tmp("company", company_params)
-      redirect_to confirm_path
+      redirect_to confirm_users_path
     else
       render 'new'
     end
