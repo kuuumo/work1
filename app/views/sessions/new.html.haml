@@ -1,17 +1,20 @@
-%h1 Sessions#new
-.form
-  = form_for(:session, url: sessions_path) do |f|
-    .mt10
-    = f.label :email
-    = f.email_field :email
+-provide(:title, "Log in")
 
-    .mt10
-    = f.label :password
-    = f.password_field :password
+.login
+  %h1 ログイン画面
+  .form
+    = form_for(:session, url: sessions_path) do |f|
+      %div
+        = f.label :email
+        = f.email_field :email, class: 'input-field'
 
-    .mt10
-    = f.submit "Log in"
+      %div
+        = f.label :password
+        = f.password_field :password, class: 'input-field'
 
-.sign_up
-  %p New user?
-  = link_to "Sign up now!", new_user_path
+      %div
+        = f.submit "ログイン", class: 'next-button'
+
+  .sign_up
+    %p ユーザー登録がまだお済みでない方は
+    = link_to "こちら", new_user_path

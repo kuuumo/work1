@@ -1,3 +1,81 @@
 .mt10 {
   margin-top: 10px;
 }
+
+header {
+  display: flex;
+  padding: 7px 15px;
+  background-color: #2E2F30;
+  .left {
+    a {
+      font-size: 140%;
+      color: white;
+      text-decoration: none;
+    }
+  }
+  .right {
+    margin-left: auto;
+    a {
+      padding: 3px;
+      color: white;
+      text-decoration: none;
+    }
+  }
+}
+
+
+/* ホーム画面 */
+.home {
+  display: flex;
+  flex-direction: column;
+
+  h1 {
+    margin-left: 9px;
+  }
+
+  p {
+  }
+
+  .link_path {
+    flex-direction: row;
+  }
+}
+
+
+/* ログイン画面 */
+.login {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .sign_up {
+    display: flex;
+    a {
+      margin-block-start: 1em;
+      margin-block-end: 1em;
+      margin-inline-start: 0px;
+      margin-inline-end: 0px;
+    }
+  }
+}
+
+
+/*　フォーム欄 */
+.form {
+  display: flex;
+  margin: 15px;
+  padding: 15px;
+
+  .input-field {
+    width: 300px;
+  }
+
+  div {
+    display: flex;
+    flex-direction: column;
+    margin-top:20px;
+    .next-button {
+      background-color: orange;
+    }
+  }
+}

@@ -1,9 +1,10 @@
-%header
-  .left
-    = link_to "Work 1", root_path, id: "logo"
+.parent-header
+  %header
+    .left
+      = link_to "Work 1", root_path, id: "logo"
     .right
       -if logged_in?
         =link_to "Log out", session_path, method: :delete
       -else
         =link_to "Sign up", new_user_path
-        =link_to "Log in", sessions_path
+        =link_to "Log in", new_session_path

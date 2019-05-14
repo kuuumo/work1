@@ -1,11 +1,15 @@
 -provide(:title, "Home")
 
-%h1 Home
--if logged_in?
-  = link_to "Log out", session_path, method: :delete
--else
-  %p not yet user?
-  = link_to "Sign up!", new_user_path
-  .mt10
-    %p you have account?
-    = link_to "Log in", new_session_path
+.home
+  %h1 Home
+  %p This is home page. Choose "Sign up" or "Log in" !
+  .link_path
+    -if logged_in?
+      = link_to "Log out", session_path, method: :delete
+    -else
+      %div
+        %span not yet user?
+        = link_to "Sign up!", new_user_path
+      %div
+        %span you have account?
+        = link_to "Log in", new_session_path
