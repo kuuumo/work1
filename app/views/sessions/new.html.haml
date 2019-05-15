@@ -1,20 +1,28 @@
 -provide(:title, "Log in")
 
-.login
+.base_page
   %h1 ログイン画面
-  .form
-    = form_for(:session, url: sessions_path) do |f|
-      %div
-        = f.label :email
-        = f.email_field :email, class: 'input-field'
+  .login
+    .left
+      %p.bold 外部サービスでログイン
+      = button_to "Facebookでログイン", "#", class: "button blue-button"
+      = button_to "Googleでログイン", "#", class: "button white-button"
+      = button_to "Yahoo! JAPANでログイン", "#", class: "button red-button"
+    .line-vertical
+    .form
+      %p.bold メールアドレスでログイン
+      = form_for(:session, url: sessions_path) do |f|
+        %div
+          = f.label :メールアドレス
+          = f.email_field :email, class: 'input-field input-login'
 
-      %div
-        = f.label :password
-        = f.password_field :password, class: 'input-field'
+        %div
+          = f.label :パスワード
+          = f.password_field :password, class: 'input-field input-login'
 
-      %div
-        = f.submit "ログイン", class: 'next-button'
-
-  .sign_up
-    %p ユーザー登録がまだお済みでない方は
-    = link_to "こちら", new_user_path
+        %div
+          = f.submit "ログイン", class: 'next-button'
+.line-horizontal
+.sign_up
+  %p アカウントをお持ちでない方はサインインしてください。
+  = button_to "新規登録画面へ", new_user_path, method: :get, class: "button button-view-change"
