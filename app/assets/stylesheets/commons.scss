@@ -6,16 +6,17 @@ header {
 }
 .header-container {
   display: flex;
-  justify-content: space-between;
+  align-items: baseline;
+  flex: 1;
+
   @media screen and (max-width: 375px) {
     display: flex;
     flex-direction: column-reverse;
-    flex: 1;
   }
 
   &.right {
-    align-items: flex-end;
-    @media screen and (max-width: 375px) {
+    flex-direction: row-reverse;
+    @media screen and (max-width: 375px){
       margin-bottom: 6px;
     }
   }
@@ -27,39 +28,32 @@ header {
   display: flex;
   flex-direction: column;
 
-  .link_path {
+  .link-path {
     flex-direction: row;
   }
 }
 
 
 /* 登録進行状況 */
-.regi-stage {
+.registration-stage {
   display: flex;
-  justify-content: center;
-  width: 60%;
+  justify-content: space-around;
+  width: 50%;
 
-  div {
+  .step {
     margin: 10px;
     padding: 9px;
-    color: white;
-    background-color: darkslateblue;
-  }
-  .now {
-    color: black;
-    background-color: orange;
+    background-color: lightskyblue;
+
+    &.now {
+      color: white;
+      background-color: darkblue;
+    }
   }
 }
 
 
-/*　フォーム欄 */
-.form {
-  display: flex;
-  flex-direction: column;
-  align-items: baseline;
-
-  padding: 0 30px 0 30px;
-}
+/* フォーム欄 */
 .label-filed {
   text-align: left;
 }
@@ -67,26 +61,38 @@ header {
   width: 100%;
   height: 30px;
   border-radius: 25px;
-  border-color: black;
-
-  &.small {
-    width: 80%;
-  }
+  border-color: gainsboro;
 }
 
 
 /* ボタン */
 .button {
-  width: 100%;
-  padding: 15px;
+  display: block;
+  width: 70%;
+  padding: 10px 20px;
   border-radius: 25px;
   background-color: steelblue;
+  text-align: center;
+  text-decoration: none;
+  color: black;
+
+  &.input {
+    width: 100%;
+  }
+  &.small {
+    width: 20%;
+    @media screen and (max-width: 375px) {
+      width: 50%;
+    }
+  }
 
   &.blue {
     color: white;
     background-color: royalblue;
   }
   &.white {
+    border: 1px solid;
+    border-color: #999999;
     background-color: white;
   }
   &.red {
@@ -96,13 +102,17 @@ header {
   &.orange {
     background-color: orange;
   }
+  &.light-gray {
+    background-color: #BBBBBB;
+  }
+}
 
-  &.small {
-    width: 50%;
-
-    @media screen and (max-width: 375px) {
-      width: 100%;
-    }
+.btn-container {
+  display: flex;
+  justify-content: center;
+  width: 300px;
+  @media screen and (max-width: 375px) {
+    width: 280px;
   }
 }
 
@@ -122,12 +132,48 @@ header {
   }
 }
 
+/* 丸 */
+.circle {
+  width: 150px;
+  height:150px;
+  background-color: gainsboro;
+  border-radius: 50%;
+}
+
 /* コンテナー */
 .container {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+
+  &.flex-container {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  &.form{
+    align-items: baseline;
+    align-self: center;
+    width: 350px;
+    margin-top: 20px;
+    &.small {
+      width: 70%;
+      padding: 0 30px 0 30px;
+      @media screen and (max-width: 375px){
+        width: 100%;
+      }
+    }
+  }
+
+  &.text {
+    align-items: flex-start;
+  }
+
+  @media screen and (max-width: 375px) {
+    align-content: space-around;
+    align-items: flex-start;
+  }
 
   &.side {
     align-items: baseline;
@@ -156,12 +202,6 @@ header {
   }
 }
 
-@media screen and (max-width: 375px) {
-  .container {
-    text-align: center;
-  }
-}
-
 
 /* 文字 */
 .bold {
@@ -177,15 +217,24 @@ header {
 
 .link-word {
   text-decoration: none;
+  padding: 0 3px 0 3px;
+
   &.logo {
     font-size: 40px;
-
+    padding: 5px;
     @media screen and (max-width: 375px) {
       font-size: 35px;
     }
   }
 }
-
+@media screen and (max-width: 375px) {
+  .sp-small {
+    font-size: small;
+  }
+}
+.left {
+  text-align: left;
+}
 
 /* margin */
 .mt10 {
@@ -193,6 +242,9 @@ header {
 }
 .mt20 {
   margin-top: 20px;
+}
+.mt30 {
+  margin-top: 30px;
 }
 .mt40 {
   margin-top: 40px;
@@ -205,6 +257,13 @@ header {
   height: 50%;
 }
 
+
+.max-width {
+  width: 100%;
+}
+.width40 {
+  width: 40%;
+}
 
 /* 見出し */
 h1 {

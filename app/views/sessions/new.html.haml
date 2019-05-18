@@ -3,32 +3,35 @@
 %h1 ログイン画面
 .container.side
   .sub-container
-    .bold.mt40 外部サービスでログイン
-    .mt20
-      = button_to "Facebookでログイン", "#", class: "button blue small"
-    .mt20
-      = button_to "Googleでログイン", "#", class: "button white small"
-    .mt20
-      = button_to "Yahoo! JAPANでログイン", "#", class: "button red small"
-    .mt20
-      %div ※ログイン以外の目的に使われることはありません。
-      %div ※訪日コムがゲスト以外の同意なしに投稿することはありません。
-      %div ※訪日コム利用規約をお読みになり同意の上、登録へお進みください。
+    .bold.mt40
+      外部サービスでログイン
+    .container
+      .mt20.btn-container
+        = link_to "Facebookでログイン", "#", class: "button blue "
+      .mt20.btn-container
+        = link_to "Googleでログイン", "#", class: "button white"
+      .mt20.btn-container
+        = link_to "Yahoo! JAPANでログイン", "#", class: "button red"
+    .container.text.mt20
+      .left ※ログイン以外の目的に使われることはありません。
+      .left ※訪日コムがゲスト以外の同意なしに投稿することはありません。
+      .left ※訪日コム利用規約をお読みになり同意の上、登録へお進みください。
   .line-horizontal2
   .sub-container
     .bold.mt40 メールアドレスでログイン
     = form_for(:session, url: sessions_path) do |f|
-      .form.mt20
-        = f.label :メールアドレス, class: "label-field"
-        = f.email_field :email, class: 'input-field'
+      .container
+        .container.form.small
+          = f.label :メールアドレス, class: "label-field"
+          = f.email_field :email, class: 'input-field'
 
-      .form.mt20
-        = f.label :パスワード, class: "label-field"
-        = f.password_field :password, class: 'input-field'
+        .container.form.small
+          = f.label :パスワード, class: "label-field"
+          = f.password_field :password, class: 'input-field'
 
-      .form.mt20
-        = f.submit "ログイン", class: 'button orange'
+        .container.form.small
+          = f.submit "ログイン", class: 'button input orange'
 .line-horizontal
 .container.side
-  %div アカウントをお持ちでない方はサインインしてください。
-  = button_to "新規登録画面へ", new_user_path, method: :get, class: "button"
+  .sp-small アカウントをお持ちでない方はサインインしてください。
+  = link_to  "新規登録画面へ", new_user_path, class: "button small"
