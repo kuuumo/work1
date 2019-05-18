@@ -1,28 +1,34 @@
 -provide(:title, "Log in")
 
-.base_page
-  %h1 ログイン画面
-  .login
-    .left
-      %p.bold 外部サービスでログイン
-      = button_to "Facebookでログイン", "#", class: "button blue-button"
-      = button_to "Googleでログイン", "#", class: "button white-button"
-      = button_to "Yahoo! JAPANでログイン", "#", class: "button red-button"
-    .line-vertical
-    .form
-      %p.bold メールアドレスでログイン
-      = form_for(:session, url: sessions_path) do |f|
-        %div
-          = f.label :メールアドレス
-          = f.email_field :email, class: 'input-field input-login'
+%h1 ログイン画面
+.container.side
+  .sub-container
+    .bold.mt40 外部サービスでログイン
+    .mt20
+      = button_to "Facebookでログイン", "#", class: "button blue small"
+    .mt20
+      = button_to "Googleでログイン", "#", class: "button white small"
+    .mt20
+      = button_to "Yahoo! JAPANでログイン", "#", class: "button red small"
+    .mt20
+      %div ※ログイン以外の目的に使われることはありません。
+      %div ※訪日コムがゲスト以外の同意なしに投稿することはありません。
+      %div ※訪日コム利用規約をお読みになり同意の上、登録へお進みください。
+  .line-horizontal2
+  .sub-container
+    .bold.mt40 メールアドレスでログイン
+    = form_for(:session, url: sessions_path) do |f|
+      .form.mt20
+        = f.label :メールアドレス, class: "label-field"
+        = f.email_field :email, class: 'input-field'
 
-        %div
-          = f.label :パスワード
-          = f.password_field :password, class: 'input-field input-login'
+      .form.mt20
+        = f.label :パスワード, class: "label-field"
+        = f.password_field :password, class: 'input-field'
 
-        %div
-          = f.submit "ログイン", class: 'next-button'
+      .form.mt20
+        = f.submit "ログイン", class: 'button orange'
 .line-horizontal
-.sign_up
-  %p アカウントをお持ちでない方はサインインしてください。
-  = button_to "新規登録画面へ", new_user_path, method: :get, class: "button button-view-change"
+.container.side
+  %div アカウントをお持ちでない方はサインインしてください。
+  = button_to "新規登録画面へ", new_user_path, method: :get, class: "button"
