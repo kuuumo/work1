@@ -167,7 +167,7 @@ header {
   }
 
   &.text {
-    align-items: flex-start;
+    align-items: baseline;
   }
 
   @media screen and (max-width: 375px) {
