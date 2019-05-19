@@ -7,11 +7,11 @@
       外部サービスでログイン
     .container
       .mt20.btn-container
-        = link_to "Facebookでログイン", "#", class: "button blue "
+        = link_to "Facebookでログイン", "#", class: "btn blue "
       .mt20.btn-container
-        = link_to "Googleでログイン", "#", class: "button white"
+        = link_to "Googleでログイン", "#", class: "btn white"
       .mt20.btn-container
-        = link_to "Yahoo! JAPANでログイン", "#", class: "button red"
+        = link_to "Yahoo! JAPANでログイン", "#", class: "btn red"
     .container.mt20
       .container.text
         .left ※ログイン以外の目的に使われることはありません。
@@ -22,17 +22,17 @@
     .bold.mt40 メールアドレスでログイン
     = form_for(:session, url: sessions_path) do |f|
       .container
-        .container.form.small
+        .container.form-container.small
           = f.label :メールアドレス, class: "label-field"
           = f.email_field :email, class: 'input-field'
 
-        .container.form.small
+        .container.form-container.small
           = f.label :パスワード, class: "label-field"
           = f.password_field :password, class: 'input-field'
 
-        .container.form.small
-          = f.submit "ログイン", class: 'button input orange'
+        .container.form-container.small
+          = f.submit "ログイン", class: 'btn input orange'
 .line-horizontal
 .container.side
   .sp-small アカウントをお持ちでない方はサインインしてください。
-  = link_to  "新規登録画面へ", new_user_path, class: "button small"
+  = link_to  "新規登録画面へ", new_user_path, class: "btn small"
