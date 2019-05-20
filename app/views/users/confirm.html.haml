@@ -1,37 +1,48 @@
 -provide(:title, "confirm")
 
-%h1 確認画面
-%p.user
-    .mt10
-    = @user["name"]
-    .mt10
-    = @user["phonetic"]
-    .mt10
-    = @user["email"]
-    .mt10
-    = @user["tel"]
-    .mt10
-    passwordはセキュリティ上表示しません。
-%p.company
-    .mt10
-    = @company["company"]
-    .mt10
-    = @company["department"]
-    .mt10
-    = @company["position"]
-    .mt10
-    = @company["employee_num"]
-    .mt10
-    = @company["company_post_code"]
-    .mt10
-    = @company["company_location"]
-    .mt10
-    = @company["establishment_year"]
-    .mt10
-    = @company["industry_type"]
-    .mt10
-    = @company["ceo_name"]
+.container
+  %h1 確認画面
+  .stage-status
+    .step ステップ① 会員情報の登録
+    .step ステップ② 会社情報の登録
+    .step.now ステップ③ 入力内容の確認
+  .container.form-container
+    .mt20 名前　＊必須
+    .bold= @user["name"]
+    .mt20 フリガナ　＊必須　
+    .bold= @user["phonetic"]
+    .mt20 メールアドレス　＊必須
+    .bold= @user["email"]
+    .mt20 電話番号　＊必須
+    .bold= @user["tel"]
+    .mt20 パスワード　＊必須
+    .bold ●●●●●●●
+    .mt20 プロフィール画像　＊必須
+    .mt10.circle
 
-= link_to "送信",finish_confirm_user_path, method: :post
+    .line-horizontal.dot-line.long
 
+    .mt20 会社名　＊必須
+    .bold= @company["company"]
+    .mt20 部署　＊必須
+    .bold= @company["department"]
+    .mt20 役職　＊必須
+    .bold= @company["position"]
+    .mt20 従業員数　＊必須
+    .bold= @company["employee_num"]
+    .mt20 郵便番号　＊必須
+    .bold= @company["company_post_code"]
+    .mt20 所在地　＊必須
+    .bold= @company["company_location"]
+    .mt20 創立年月日　＊必須
+    .bold= @company["establishment_year"]
+    .mt20 業種　＊必須
+    .bold= @company["industry_type"]
+    .mt20 社長名　＊必須
+    .bold= @company["ceo_name"]
+
+    .mt20.btn-container
+      = link_to "この内容で登録する", finish_confirm_users_path, method: :post, class: "btn input orange"
+    .mt10.btn-container
+      =link_to "前へ戻る", '#', class: "btn input light-gray"
 
