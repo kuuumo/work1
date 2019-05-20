@@ -1,7 +1,7 @@
 %header
   .header-container
     = link_to "訪日コム", root_path, class: "link-word logo white-font"
-    .white-font.small インバウンド対策サービスの資料請求・比較サイト
+    .white-font.small-text インバウンド対策サービスの資料請求・比較サイト
   .header-container.right
     -if logged_in?
       =link_to "ログアウト", session_path, method: :delete

@@ -25,13 +25,12 @@
         .container.form-container.small
           = f.label :メールアドレス, class: "label-field"
           = f.email_field :email, class: 'input-field'
-
         .container.form-container.small
           = f.label :パスワード, class: "label-field"
           = f.password_field :password, class: 'input-field'
-
         .container.form-container.small
           = f.submit "ログイン", class: 'btn input orange'
+
 .line-horizontal
 .container.side
   .sp-small アカウントをお持ちでない方はサインインしてください。

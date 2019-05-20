@@ -4,6 +4,7 @@ header {
   align-items: flex-end;
   background-color: #2E2F30;
 }
+
 .header-container {
   display: flex;
   align-items: baseline;
@@ -16,7 +17,7 @@ header {
 
   &.right {
     flex-direction: row-reverse;
-    @media screen and (max-width: 375px){
+    @media screen and (max-width: 375px) {
       margin-bottom: 6px;
     }
   }
@@ -28,6 +29,9 @@ header {
   display: flex;
   justify-content: space-around;
   width: 50%;
+  @media screen and (max-width: 375px) {
+    width: 95%;
+  }
 
   .step {
     margin: 10px;
@@ -45,12 +49,36 @@ header {
 /* フォーム欄 */
 .label-filed {
   text-align: left;
+
+  &.required {
+    &.after {
+      content: '※必須';
+      color: #ed2952;
+      font-size: 13px;
+      margin-left: 10px;
+      @media screen and (max-width: 600px) {
+        margin-left: 18px
+      }
+    }
+  }
 }
+
 .input-field {
   width: 100%;
   height: 30px;
   border-radius: 25px;
   border-color: gainsboro;
+  &.required {
+    &:after {
+      content: '※必須';
+      color: #ed2952;
+      font-size: 13px;
+      margin-left: 10px;
+      @media screen and (max-width: 600px) {
+        margin-left: 18px
+      }
+    }
+  }
 }
 
 
@@ -68,6 +96,7 @@ header {
   &.input {
     width: 100%;
   }
+
   &.small {
     width: 20%;
     @media screen and (max-width: 375px) {
@@ -79,18 +108,22 @@ header {
     color: white;
     background-color: royalblue;
   }
+
   &.white {
     border: 1px solid;
     border-color: #999999;
     background-color: white;
   }
+
   &.red {
     color: white;
     background-color: red;
   }
+
   &.orange {
     background-color: orange;
   }
+
   &.light-gray {
     background-color: #BBBBBB;
   }
@@ -110,9 +143,11 @@ header {
   width: 90%;
   margin: auto;
   margin-top: 30px;
-  padding: 10px;  border-top: 1px black solid;
+  padding: 10px;
+  border-top: 1px black solid;
   text-align: center;
 }
+
 @media screen and (max-width: 375px) {
   .line-horizontal2 {
     width: 90%;
@@ -124,7 +159,7 @@ header {
 /* 丸 */
 .circle {
   width: 150px;
-  height:150px;
+  height: 150px;
   background-color: gainsboro;
   border-radius: 50%;
 }
@@ -135,6 +170,7 @@ header {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  width: 100%;
 
   &.flex-container {
     flex-direction: row;
@@ -146,22 +182,21 @@ header {
     align-self: center;
     width: 350px;
     margin-top: 20px;
+    @media screen and(max-width: 375px) {
+      width: 275px;
+    }
+
     &.small {
       width: 70%;
       padding: 0 30px 0 30px;
-      @media screen and (max-width: 375px){
-        width: 100%;
+      @media screen and (max-width: 375px) {
+        width: 80%;
       }
     }
   }
 
   &.text {
     align-items: baseline;
-  }
-
-  @media screen and (max-width: 375px) {
-    align-content: space-around;
-    align-items: flex-start;
   }
 
   &.side {
@@ -183,9 +218,15 @@ header {
     }
   }
 
+  @media screen and (max-width: 375px) {
+    align-content: space-around;
+  }
+
   .flex-1 {
+
     flex: 1;
   }
+
   .flex-2 {
     flex: 2;
   }
@@ -196,27 +237,32 @@ header {
 .bold {
   font-weight: 900;
 }
+
 .small-text {
   font-size: 6px;
 }
+
 .white-font {
   color: white;
 }
+
 .link-word {
   text-decoration: none;
   padding: 0 3px 0 3px;
 
   &.logo {
-    font-size: 40px;
+    font-size: 30px;
     padding: 5px;
     @media screen and (max-width: 375px) {
       font-size: 35px;
     }
   }
 }
+
 .left {
   text-align: left;
 }
+
 @media screen and (max-width: 375px) {
   .sp-small {
     font-size: small;
@@ -228,15 +274,19 @@ header {
 .mt10 {
   margin-top: 10px;
 }
+
 .mt20 {
   margin-top: 20px;
 }
+
 .mt30 {
   margin-top: 30px;
 }
+
 .mt40 {
   margin-top: 40px;
 }
+
 .ml50 {
   margin-left: 50px;
 }
@@ -249,6 +299,11 @@ header {
 .max-width {
   width: 100%;
 }
+
+.width80 {
+  width: 80%;
+}
+
 .width40 {
   width: 40%;
 }

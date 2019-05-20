@@ -1,33 +1,37 @@
 -provide(:title, "Sign in -user-")
 
-%h1 User Register
-%p please fill in form for.
-.form_user
+.container
+  %h1 新規会員登録
+  .stage-status
+    .step.now ステップ① 会員情報の登録
+    .step ステップ② 会社情報の登録
+    .step ステップ③ 入力内容の確認
   = form_for @user do |f|
-    .mt10
-      = f.label :name
-      = f.text_field :name
-
-    .mt10
-      = f.label :phonetic
-      = f.text_field :phonetic
-      
-    .mt10
-      = f.label :email
-      = f.text_field :email
-
-    .mt10
-      = f.label :tel
-      = f.phone_field :tel
-
-    .mt10
-      = f.label :password
-      = f.password_field :password
-
-    .mt10
-      = f.label :password_confirmation
-      = f.password_field :password_confirmation
-
-    .mt10
-      = f.submit "次へ-会社情報-"
-
+    .container.mt40
+      .container.form-container
+        = f.label :お名前　＊必須, class: "label-field"
+        = f.text_field :name, class: "input-field"
+      .container.form-container
+        = f.label :フリガナ　＊必須, class: "label-field"
+        = f.text_field :phonetic, class: "input-field"
+      .container.form-container
+        = f.label :メールアドレス　＊必須, class: "label-field"
+        = f.text_field :email, class: "input-field"
+      .container.form-container
+        = f.label :電話番号（携帯）　＊必須, class: "label-field"
+        = f.phone_field :tel, class: "input-field"
+      .container.form-container
+        = f.label :パスワード　＊必須, class: "label-field"
+        = f.password_field :password, class: "input-field"
+      .container.form-container
+        = f.label :パスワード（確認用）　＊必須, class: "label-field"
+        = f.password_field :password_confirmation, class: "input-field"
+      .container.form-container
+        = f.label :プロフィール画像, class: "label-field"
+        .container.flex-container.max-width
+          .circle.mt10
+          = f.submit "ファイルを選択", class: "btn light-gray width40"
+      .container.form-container.mt20
+        = f.submit "次へ-会社情報-", class: "btn input orange"
+      .container.form-container
+        = f.submit "キャンセル", class: "btn input light-gray"
