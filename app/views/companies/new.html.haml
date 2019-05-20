@@ -1,45 +1,41 @@
 -provide(:title, "Sign in -company-")
 
-%h1 Companies
-%p please fill in form for.
-.form_company
+.container
+  %h1 会社情報の登録
+  .stage-status
+    .step ステップ① 会員情報の登録
+    .step.now ステップ② 会社情報の登録
+    .step ステップ③ 入力内容の確認
   =form_for @company do |f|
-
-    .mt10
-      = f.label :company
-      = f.text_field :company
-
-    .mt10
-      = f.label :department
-      = f.text_field :department
-
-    .mt10
-      = f.label :position
-      = f.text_field :position
-
-    .mt10
-      = f.label :employee_num
-      = f.number_field :employee_num
-
-    .mt10
-      = f.label :company_post_code
-      = f.text_field :company_post_code
-
-    .mt10
-      = f.label :company_location
-      = f.text_field :company_location
-
-    .mt10
-      = f.label :establishment_year
-      = f.date_field :establishment_year
-
-    .mt10
-      = f.label :industry_type
-      = f.text_field :industry_type
-
-    .mt10
-      = f.label :ceo_name
-      = f.text_field :ceo_name
-
-    .mt10
-      = f.submit "確認する"
+    .container.mt40
+      .container.form-container
+        = f.label :会社名　＊必須, class: "label-field"
+        = f.text_field :company, class: "input-field"
+      .container.form-container
+        = f.label :部署　＊必須, class: "label-field"
+        = f.text_field :department, class: "input-field"
+      .container.form-container
+        = f.label :役職　＊必須, class: "label-field"
+        = f.text_field :position, class: "input-field"
+      .container.form-container
+        = f.label :従業員数　＊必須, class: "label-field"
+        = f.number_field :employee_num, class: "input-field"
+      .container.form-container
+        = f.label :会社郵便番号　＊必須, class: "label-field"
+        = f.text_field :company_post_code, class: "input-field"
+      .container.form-container
+        = f.label :会社所在地　＊必須, class: "label-field"
+        = f.text_field :company_location, class: "input-field"
+      .container.form-container
+        = f.label :創立年月日　＊必須, class: "label-field"
+        = f.date_field :establishment_year, class: "input-field"
+      .container.form-container
+        = f.label :業種　＊必須, class: "label-field"
+        = f.text_field :industry_type, class: "input-field"
+      .container.form-container
+        = f.label :社長名　＊必須, class: "label-field"
+        = f.text_field :ceo_name, class: "input-field"
+      .container.form-container
+        = f.submit "確認する", class: "btn input orange"
+      .container.form-container
+        = f.submit "キャンセル", class: "btn input light-gray"

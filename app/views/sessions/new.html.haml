@@ -1,17 +1,37 @@
-%h1 Sessions#new
-.form
-  = form_for(:session, url: sessions_path) do |f|
-    .mt10
-    = f.label :email
-    = f.email_field :email
+-provide(:title, "Log in")
 
-    .mt10
-    = f.label :password
-    = f.password_field :password
+%h1 ログイン画面
+.container.side
+  .sub-container
+    .bold.mt40
+      外部サービスでログイン
+    .container
+      .mt20.btn-container
+        = link_to "Facebookでログイン", "#", class: "btn blue "
+      .mt20.btn-container
+        = link_to "Googleでログイン", "#", class: "btn white"
+      .mt20.btn-container
+        = link_to "Yahoo! JAPANでログイン", "#", class: "btn red"
+    .container.mt20
+      .container.text
+        .left ※ログイン以外の目的に使われることはありません。
+        .left ※訪日コムがゲスト以外の同意なしに投稿することはありません。
+        .left ※訪日コム利用規約をお読みになり同意の上、登録へお進みください。
+  .line-horizontal2
+  .sub-container
+    .bold.mt40 メールアドレスでログイン
+    = form_for(:session, url: sessions_path) do |f|
+      .container
+        .container.form-container.small
+          = f.label :メールアドレス, class: "label-field"
+          = f.email_field :email, class: 'input-field'
+        .container.form-container.small
+          = f.label :パスワード, class: "label-field required"
+          = f.password_field :password, class: 'input-field require'
+        .container.form-container.small
+          = f.submit "ログイン", class: 'btn input orange'
 
-    .mt10
-    = f.submit "Log in"
-
-.sign_up
-  %p New user?
-  = link_to "Sign up now!", new_user_path
+.line-horizontal
+.container.side
+  .sp-small アカウントをお持ちでない方はサインインしてください。
+  = link_to  "新規登録画面へ", new_user_path, class: "btn small"

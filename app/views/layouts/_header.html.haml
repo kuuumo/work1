@@ -1,9 +1,10 @@
 %header
-  .left
-    = link_to "Work 1", root_path, id: "logo"
-    .right
-      -if logged_in?
-        =link_to "Log out", session_path, method: :delete
-      -else
-        =link_to "Sign up", new_user_path
-        =link_to "Log in", sessions_path
+  .header-container
+    = link_to "訪日コム", root_path, class: "link-word logo white-font"
+    .white-font.small-text インバウンド対策サービスの資料請求・比較サイト
+  .header-container.right
+    -if logged_in?
+      =link_to "ログアウト", session_path, method: :delete
+    -else
+      =link_to "新規会員登録", new_user_path, class: "link-word white-font"
+      =link_to "ログイン", new_session_path, class: "link-word white-font"
