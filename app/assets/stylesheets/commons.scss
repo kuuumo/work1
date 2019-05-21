@@ -10,14 +10,14 @@ header {
   align-items: baseline;
   flex: 1;
 
-  @media screen and (max-width: 375px) {
+  @media screen and (max-width: 600px) {
     display: flex;
     flex-direction: column-reverse;
   }
 
   &.right {
     flex-direction: row-reverse;
-    @media screen and (max-width: 375px) {
+    @media screen and (max-width: 600px) {
       margin-bottom: 6px;
     }
   }
@@ -49,14 +49,13 @@ header {
 /* フォーム欄 */
 .label-filed {
   text-align: left;
-
   &.required {
     &:after {
       content: '※必須';
       color: #ed2952;
       font-size: 13px;
       margin-left: 10px;
-      @media screen and (max-width: 600px) {
+      @media screen and (max-width: 375px) {
         margin-left: 18px
       }
     }
@@ -164,6 +163,30 @@ header {
   }
 }
 
+/* 箱 */
+.box {
+  padding: 7px;
+  margin: 5px;
+  border: 3px solid black;
+  &.light-gray {
+    border-color: #999999;
+  }
+  @media screen and (max-width: 600px) {
+    &.column-box {
+      width: 100%;
+    }
+  }
+  &.wide-splong {
+    width: 80vw;
+    height: 25vw;
+
+    @media screen and (max-width: 600px) {
+      height: 100vw;
+    }
+
+  }
+}
+
 /* 丸 */
 .circle {
   width: 150px;
@@ -172,17 +195,31 @@ header {
   border-radius: 50%;
 }
 
+
 /* コンテナー */
 .container {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  box-sizing: border-box;
   width: 100%;
 
   &.flex-container {
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: space-around;
+    align-items: baseline;
+
+    @media screen and (max-width: 600px) {
+      flex-direction: column;
+      &.flex-column-reverse {
+        flex-direction: column-reverse;
+      }
+    }
+
+    &.center {
+      align-items: center;
+    }
   }
 
   &.form-container {
@@ -205,12 +242,25 @@ header {
 
   &.text {
     align-items: baseline;
+
+    @media screen and (max-width: 600px) {
+      &.spcenter {
+        text-align: center;
+        align-items: center;
+      }
+    }
   }
 
   &.side {
     align-items: baseline;
     flex-direction: row;
+    justify-content: space-around;
 
+    @media screen and (max-width:600px) {
+      flex-direction: column;
+      align-items: baseline;
+      width: auto;
+    }
     @media screen and (max-width: 375px) {
       flex-direction: column;
       align-items: center;
@@ -231,10 +281,8 @@ header {
   }
 
   .flex-1 {
-
     flex: 1;
   }
-
   .flex-2 {
     flex: 2;
   }
@@ -245,7 +293,6 @@ header {
 .bold {
   font-weight: 900;
 }
-
 .small-text {
   font-size: 6px;
 }
@@ -253,11 +300,17 @@ header {
 .white-font {
   color: white;
 }
+.orange-font {
+  color: orange;
+}
 
 .link-word {
   text-decoration: none;
   padding: 0 3px 0 3px;
 
+  &.light-gray {
+    color: lightslategray;
+  }
   &.logo {
     font-size: 30px;
     padding: 5px;
@@ -268,11 +321,14 @@ header {
 }
 
 .left {
-  text-align: left;
+  align-self: baseline;
+}
+.center-text {
+  text-align: center;
 }
 
 @media screen and (max-width: 375px) {
-  .sp-small {
+  .sp-small-font {
     font-size: small;
   }
 }
@@ -298,25 +354,80 @@ header {
 .ml50 {
   margin-left: 50px;
 }
-
-.height50 {
-  height: 50%;
+.margin5 {
+  margin: 5px;
+}
+.padding20 {
+  padding: 20px;
+}
+.padding40 {
+  padding: 40px;
 }
 
+.height200 {
+  height: 200px;
+}
 
 .max-width {
   width: 100%;
 }
-
+.width90 {
+  width: 90%;
+}
+@media screen and (max-width: 600px) {
+  .spwidth80 {
+    width: 80%;
+  }
+}
 .width80 {
   width: 80%;
 }
-
+@media screen and (max-width: 600px) {
+  .spwidth70 {
+    width: 70%;
+  }
+}
+.width70 {
+  width: 70%;
+}
 .width40 {
   width: 40%;
+}
+.width-auto {
+  width: auto;
+}
+
+/* 色 */
+.bg-white {
+  border-color: white;
+  border-radius: 10px;
+  background-color: white;
+}
+.bg-light-orange {
+  border-color: bisque;
+  background-color: bisque;
+}
+.bg-dark-blue {
+  color: white;
+  background-color: midnightblue;
 }
 
 /* 見出し */
 h1 {
-  text-align: center;
+  padding: 10px;
+  text-align: left;
+
+  &.borderl-orange{
+    border-left: 3px solid orange;
+  }
 }
+h2 {
+  padding: 10px;
+  color: white;
+  background-color: midnightblue;
+}
+h4 {
+  margin-bottom: 0;
+}
+
+
