@@ -3,38 +3,53 @@
 .container
   %h1 会社情報の登録
   .stage-status
-    .step ステップ① 会員情報の登録
-    .step.now ステップ② 会社情報の登録
-    .step ステップ③ 入力内容の確認
+    .step
+      %div ステップ①
+      %div 会員情報の登録
+    .step.now
+      %div ステップ②
+      %div 会社情報の登録
+    .step
+      %div ステップ③
+      %div 入力内容の確認
   =form_for @company do |f|
     .container.mt40
       .container.form-container
-        = f.label :会社名　＊必須, class: "label-field"
+        .mt10.label-filed.required 会社名
         = f.text_field :company, class: "input-field"
+
       .container.form-container
-        = f.label :部署　＊必須, class: "label-field"
+        .mt10.label-filed.required 部署
         = f.text_field :department, class: "input-field"
+
       .container.form-container
-        = f.label :役職　＊必須, class: "label-field"
+        .mt10.label-filed.required 役職
         = f.text_field :position, class: "input-field"
+
       .container.form-container
-        = f.label :従業員数　＊必須, class: "label-field"
+        .mt10.label-filed.required 従業員数
         = f.number_field :employee_num, class: "input-field"
+
       .container.form-container
-        = f.label :会社郵便番号　＊必須, class: "label-field"
+        .mt10.label-filed.required 会社郵便番号
         = f.text_field :company_post_code, class: "input-field"
+
       .container.form-container
-        = f.label :会社所在地　＊必須, class: "label-field"
+        .mt10.label-filed.required 所在地
         = f.text_field :company_location, class: "input-field"
+
       .container.form-container
-        = f.label :創立年月日　＊必須, class: "label-field"
+        .mt10.label-filed.required 創立年月日
         = f.date_field :establishment_year, class: "input-field"
+
       .container.form-container
-        = f.label :業種　＊必須, class: "label-field"
+        .mt10.label-filed.required 業種
         = f.text_field :industry_type, class: "input-field"
+
       .container.form-container
-        = f.label :社長名　＊必須, class: "label-field"
+        .mt10.label-filed.required 社長名
         = f.text_field :ceo_name, class: "input-field"
+
       .container.form-container
         = f.submit "確認する", class: "btn input orange"
       .container.form-container
