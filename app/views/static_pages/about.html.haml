@@ -1,0 +1,88 @@
+-provide(:title, "about")
+
+%div
+  =link_to "トップ", root_path, class: "link-word light-gray"
+  >
+  =link_to "訪日コムとは", about_path, class: "link-word light-gray"
+
+.container
+  .width90
+    %h1.mt40.borderl-orange
+      インバウンドサービス対策に特化した無料の資料請求比較サイト「訪日コム」とは？
+    .container
+      .box.light-gray.wide-splong
+      .container.text.width70.spwidth80
+        .mt30
+          インバウンド対策したいユーザーは、会員登録するとソリューション資料を無料で好きなだけダウンロードできます。
+        .mt20
+          一方で、訪日コムに資料掲載いただいた企業には、その資料をダウンロードしたユーザーの情報をリード情報（見込み顧客データ）として提供します。
+        .mt20
+          インバウンド対策をしたいユーザーとインバウンドソリューション掲載企業の効率的なマッチングを実現します。
+
+    %h2.bg-dark-blue.mt40 インバウンド対策の重要性
+    .container.flex-container.center.flex-column-reverse
+      .container.text.width-auto.spcenter
+        .bold 増え続ける訪日旅行客
+        .mt20.box
+        .mt20
+          インバウンド対策を迫られる企業のほとんどが　
+          .bold 人材とノウハウが不足
+        .box
+        .mt20
+          .bold インバウンドソリューションを持つ企業と対策を必要
+          .boldとするマッチングする仕組みが必要
+      .box.width40.height200
+
+    %h2.mt40 訪日コムでできること
+    .container.flex-container.center
+      .container.padding20.spwidth70
+        %h3.orange-font.left ソリューション掲載企業向け
+        %h4.left リード情報の獲得
+        %div
+          資料がダウンロードされるごとに、インバウンド対策をしたいと思っているユーザー情報を、見込み顧客データとして提供します。
+        %h4.left 直接案件の紹介
+        %div
+          訪日コム、訪日ラボに対して日々お問い合わせいただくインバウンド対策に関する案件のご紹介が可能です。
+        %h4.left 訪日ラボでのプレスリリース掲載
+        %div
+          姉妹サイト「訪日ラボ」にて貴社のプレスリリース掲載が可能です。
+        %h4.left 訪日ラボでのインタビュー記事掲載
+        %div 姉妹サイト「訪日ラボ」にて貴社のインタビュー記事掲載が可能です。
+      .container.padding20.spwidth70
+        %h3.orange-font.left ソリューション掲載企業向け
+        %h4.left インバウンド対策資料ダウンロード（無料）
+        %div
+          気になるソリューションについての資料を提供します。会員登録しておけば複数サービスの資料請求と比較が容易に行えます。
+        %h4.left インバウンド業界レポートダウンロード（無料）
+        %div
+          定期的に発行する弊社のインバウンドレポートを会員限定にて公開しています。
+        %h4.left メールマガジン（無料）
+        %div
+          検討中のソリューションの更新情報、最新業界ニュースなど幅広い情報をお届けしています。
+
+    %h2 資料掲載企業の一例
+    .container.mt30
+      .container.side.text
+        %div
+          %p.bold 株式会社Voyagin
+          %p.bold 株式会社ビヨンド
+        %div
+          %p.bold 株式会社PAYKE
+          %p.bold 株式会社Vpon JAPAN 株式会社
+        %div
+          %p.bold 毎日新聞
+          %p.bold 株式会社トレンドExpress
+      .container.box.bg-light-orange.padding40.mt40
+        %h3 掲載の申し込みはこちら
+        .container.side
+          .box.column-box.bg-white.flex-1.center-text.margin5 ソリューション掲載 1,300社以上
+          .box.column-box.bg-white.flex-1.center-text.margin5 初期費用無料
+          .box.column-box.bg-white.flex-1.center-text.margin5 掲載費用無料
+        .container.width80.spwidth70
+          %p
+            訪日コムには大手企業を中心に飲料メーカー、コンビニチェーン、ドラッグストア、通信会社、交通系企業、
+            TV局、不動産デベロッパー、商社などにインバウンド担当者が登録し、インバウンド対策資料をダウンロードされています。
+          %p.bold
+            訪日コムに資料掲載をいただくと、こうした企業の担当者情報を見込み顧客/リード顧客として入手いただけます。
+          .btn-container
+            = link_to "掲載申し込みはこちら", '#', class: "btn orange white-font"
