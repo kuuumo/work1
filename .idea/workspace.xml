@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="2d1c010e-bf5f-4a36-9123-ec98243e0910" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/app/views/static_pages/home.html.haml" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/static_pages/home.html.haml" afterDir="false" />
-    </list>
+    <list default="true" id="2d1c010e-bf5f-4a36-9123-ec98243e0910" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/.bundle/" />
     <ignored path="$PROJECT_DIR$/components/" />
     <ignored path="$PROJECT_DIR$/log/" />
@@ -328,7 +326,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="29825000" />
+    <option name="totallyTimeSpent" value="30078000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="6" />
